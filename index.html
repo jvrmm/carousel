@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carousel Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <!--For edit the Bootstrap internal css, our custom css link have to be the last link (below the others)-->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Added 2 options in this example: -->
+  <!-- data-bs-interval = The amount of time to delay between automatically cycling an item. -->
+  <!-- data-bs-pause = when you put the mouse on (hover), the carousel stopped in the item selected. -->
+  <!-- The first thing is a div, that has the ID of the carousel that has to be unique across the page. -->
+  <!-- Next, we add some custom bootstrap classes which defines what component it is "carousel" and if should animate from right or left "slide". -->
+  <!-- I want a static carousel, so the option 'data-bs-ride' goes to "false" ("carousel" by default). -->
+  <!-- As we have it static, we don't need 'data-bs-interval' anymore. Same to 'data-bs-pause' with the value "hover". -->
+  <div id="testimonial-carousel" class="carousel slide" data-bs-ride="false">
+    <!-- We've got the "carousel-inner", and this is going to containt the contents of the carousel items, so the slide that would be change. -->
+    <div class="carousel-inner">
+      <!-- Inside the "carousel-inner", we've got the 3 carousel items, and the first one, the first slide is match with an 'active' class (one of this carousel items, must have it.)-->
+      <!-- The next thing, is the property 'style', that allow you to change some css properties (in this case the background to distinguish them). -->
+      <div class="carousel-item active" style="background-color: red;">
+        <!-- We can have an image, h1, or whatever we want to see in the carousel. -->
+        <h1>Hello</h1>
+      </div>
+      <div class="carousel-item" style="background-color: black;">
+        <h1>World</h1>
+      </div>
+      <div class="carousel-item" style="background-color: purple;">
+        <h1>Bye</h1>
+      </div>
+    </div>
+    <!-- The ID '#testimonial-carousel' in the buttons, must be the same as the principal div ID. -->
+    <!-- The "carousel-control-prev" is the left button of the carousel. -->
+    <!-- Each button needs a target "#testimonial-carousel" that is the ID of this carousel, because we can have some carousels in the webpage and have to be differents IDs to work. -->
+    <!-- Next property is the 'data-bs-slide' that have the value "prev". This shows you the direction of the slide (left or backwards in this case). -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+      <!-- This is the arrows icons of the carousel. This comes from the bootstrap class "carousel-control-prev-icon". -->
+      <!-- Setting the property 'aria-hidden' to "true", makes the screen reader skipper with this button interval, so the visually impaired person doesn't have to listen to all the buttons are. -->
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</body>
+
+</html>
